@@ -4,7 +4,7 @@
   mkdir /opt/store/share/peer/ssh -p
   
 #
-  serivceName='sshd'
+  serviceName='sshd'
   
   imageName='zerounnet/swarm-sshd-alpine'
   
