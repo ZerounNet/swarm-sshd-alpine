@@ -3,7 +3,7 @@ FROM alpine
 MAINTAINER ZerounNet
 
 RUN apk --no-cache upgrade ; \
-    apk --no-cache add openssh ; \
+    apk --no-cache add openssh python ; \
     mkdir -p /var/run/sshd ; \
     rm -rvf /etc/ssh/ssh_host_*_key* ; \
     ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa ; \
