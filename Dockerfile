@@ -10,7 +10,8 @@ RUN apk --no-cache upgrade ; \
     ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa ; \
     ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa ; \
     ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519 ; \
-    echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config ; \
+    echo 'StrictHostKeyChecking no' >> /etc/ssh/ssh_config ; \
+    echo 'UserKnownHostsFile /dev/null' >> /etc/ssh/ssh_config ; \
     echo 'UseDNS no' >> /etc/ssh/sshd_config ; \
     rm -rfv /etc/init.d/*
 
